@@ -1,5 +1,6 @@
 package com.tcs.hibernate_relationship_mapping_crud_operation.one_to_one_mapping.entity;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToOne;
@@ -14,7 +15,7 @@ public class Person {
 	private String email;
 	private long phone;
 	
-	@OneToOne
+	@OneToOne(cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
 	private Adhar adhar;
 
 }

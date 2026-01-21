@@ -26,7 +26,7 @@ public class PersonAdharDao {
       
       et.begin();
       
-      em.persist( adhar);
+     // em.persist( adhar);
       em.persist(person);
       
       et.commit();
@@ -39,6 +39,7 @@ public class PersonAdharDao {
 		 
 		 return em.find(Person.class, personId);
 	 }
+	 
 	 
 	 
 	 public boolean deleteAdharByAdharNumber(long adharNumber) {
@@ -67,5 +68,21 @@ public class PersonAdharDao {
 			 	 
 		 }
 		 return false;
+	 }
+	 
+	 public boolean deletePersonByPersonIdDao(int personId) {
+		 em=emf.createEntityManager();
+		 et=em.getTransaction();
+		 Person person=em.find(Person.class, personId);
+		 
+		 if(person!=null) {
+			 et.begin();
+			 em.remove(person);
+			 et.commit();
+			 return true;
+			
+		 }
+		 return false;
+		 
 	 }
 }
