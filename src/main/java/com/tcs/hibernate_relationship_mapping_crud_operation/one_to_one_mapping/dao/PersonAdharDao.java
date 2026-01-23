@@ -51,18 +51,22 @@ public class PersonAdharDao {
 		 Adhar adhar=em.find(Adhar.class,adharNumber);
 		 
 		 if(adhar!=null) {
-			 et.begin();
 			 
-			 Query query=em.createQuery("SELECT p FROM Person p.adhar.adharNO=?1");
+			 
+			 Query query=em.createQuery("SELECT p FROM Person p.adhar.adharNO=?",Person.class);
 			 
 			 query.setParameter(1, adhar.getAdharNo());
 			 
 			 Person person=(Person) query.getSingleResult();
+			 
+			 
+			 et.begin();
+			 
 			 person.setAdhar(null);
 			 
 			 em.merge(person);
 			 
-			 em.remove(adhar);
+//			 em.remove(adhar);
 			 
 			 et.commit();
 			 	 

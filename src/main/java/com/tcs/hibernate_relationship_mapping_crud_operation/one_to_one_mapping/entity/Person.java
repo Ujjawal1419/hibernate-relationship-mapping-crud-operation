@@ -15,7 +15,7 @@ public class Person {
 	private String email;
 	private long phone;
 	
-	@OneToOne(cascade = {CascadeType.PERSIST, CascadeType.REMOVE})
+	@OneToOne(cascade = {CascadeType.PERSIST},orphanRemoval = true)
 	private Adhar adhar;
 
 }
