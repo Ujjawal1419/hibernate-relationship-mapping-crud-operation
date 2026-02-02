@@ -41,7 +41,8 @@ public class CountryStateDao {
 		
 		return country;
 	}
-	
+	// saveSateAndAssocitateWithCountry(int countryId, List<State> states)
+	// return boolean;
 	public Country saveStatesAndAssociateWithCountryDao(int countryId,List<State> states) {
 		em=emf.createEntityManager();
 		et=em.getTransaction();
@@ -67,5 +68,28 @@ public class CountryStateDao {
 		
 		et.commit();
 		return country;
+	}
+	
+	public boolean deleteStateByStateIdDao(int stateId) {
+		
+		em=emf.createEntityManager();
+		et=em.getTransaction();
+		
+		State state=em.find(State.class, stateId);
+		
+		if(state!=null) {
+			et.begin();
+			
+			Query query=em.createNativeQuery("delete from country_state where states_id=?1");
+			
+			query.executeUpdate();
+			
+			em.remove(state);
+			
+			et.commit();
+			
+			return true;
+		}
+		return false;
 	}
 }

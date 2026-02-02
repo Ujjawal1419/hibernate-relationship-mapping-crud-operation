@@ -11,17 +11,17 @@ public class InsertPersonAdharController {
 
 		Adhar adhar = new Adhar();
 		
-		adhar.setAdharNo(586586858546l);
-		adhar.setDob(LocalDate.parse("1985-10-15"));
-		adhar.setAddress("noida sector 18");
-		adhar.setFatherName("Raghunath pd Yadav");
+		adhar.setAdharNo(584587847872l);
+		adhar.setDob(LocalDate.parse("1970-05-25"));
+		adhar.setAddress("New Delhi");
+		adhar.setFatherName("Raju");
 
 		Person person = new Person();
 		
-		person.setId(02);
-		person.setName("Ankit kumar");
-		person.setEmail("ankit1422@gmail.com");
-		person.setPhone(9546224317l);
+		person.setId(03);
+		person.setName("Pappu kumar");
+		person.setEmail("pappu1422@gmail.com");
+		person.setPhone(8521626228l);
 		person.setAdhar(adhar);
 
 		new PersonAdharDao().savePersonAdharDao(person, adhar);

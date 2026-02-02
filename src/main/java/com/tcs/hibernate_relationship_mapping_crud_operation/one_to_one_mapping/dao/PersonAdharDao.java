@@ -75,6 +75,7 @@ public class PersonAdharDao {
 	 }
 	 
 	 public boolean deletePersonByPersonIdDao(int personId) {
+		 
 		 em=emf.createEntityManager();
 		 et=em.getTransaction();
 		 Person person=em.find(Person.class, personId);
