@@ -14,26 +14,26 @@ public class InsertCountryStateController {
 		CountryStateDao dao = new CountryStateDao();
 
 		State state1 = new State();
-		state1.setId(104);
-		state1.setName("Madhesh");
-		state1.setCapitalName("jankpur");
+		state1.setId(101);
+		state1.setName("Jharkhand");
+		state1.setCapitalName("Ranchi");
 
 		State state2 = new State();
-		state2.setId(105);
-		state2.setName("Lumbini");
-		state2.setCapitalName("Deukhuri");
+		state2.setId(102);
+		state2.setName("Bihar");
+		state2.setCapitalName("Patna");
 
 		State state3 = new State();
-		state3.setId(106);
-		state3.setName("Gandaki");
-		state3.setCapitalName("Pokhara");
+		state3.setId(103);
+		state3.setName("Assam");
+		state3.setCapitalName("Dispur");
 
 		List<State> states = new ArrayList<State>(Arrays.asList(state1, state2, state3));
 
 		Country country = new Country();
-		country.setId(977);
-		country.setName("NEPAL");
-		country.setCapitalName("kATHMANDU");
+		country.setId(91);
+		country.setName("INDIA");
+		country.setCapitalName("DELHI");
 		country.setStates(states);
 
 		dao.saveCountryStateDao(country, states);

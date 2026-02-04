@@ -23,9 +23,6 @@ public class InsertStateAndAssociateWithCountryController {
 	  
 	  List<State> states=new ArrayList<State>(Arrays.asList(state1,state2));
 	  
-	  
-	  
-	  
 	  new CountryStateDao().saveStatesAndAssociateWithCountryDao(0, null);
   }
 

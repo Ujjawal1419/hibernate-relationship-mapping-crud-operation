@@ -10,14 +10,14 @@ public class InsertPersonAdharController {
 	public static void main(String[] args) {
 
 		Adhar adhar = new Adhar();
-		
+
 		adhar.setAdharNo(584587847872l);
 		adhar.setDob(LocalDate.parse("1970-05-25"));
 		adhar.setAddress("New Delhi");
 		adhar.setFatherName("Raju");
 
 		Person person = new Person();
-		
+
 		person.setId(03);
 		person.setName("Pappu kumar");
 		person.setEmail("pappu1422@gmail.com");
@@ -25,6 +25,6 @@ public class InsertPersonAdharController {
 		person.setAdhar(adhar);
 
 		new PersonAdharDao().savePersonAdharDao(person, adhar);
-
+		System.out.println("Data Saved");
 	}
 }
